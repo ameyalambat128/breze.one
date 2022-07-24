@@ -23,8 +23,8 @@ const Header = () => {
   }, []);
   return (
     <section
-      className={`fixed top-0 left-0 w-full transition duration-300 ease-in-out ${
-        show ? "bg-black/90 text-white" : "bg-transparent"
+      className={`fixed top-0 left-0 w-full z-50 transition duration-300 ease-in-out ${
+        show ? "bg-black/95 text-white" : "bg-transparent"
       }`}
     >
       <div className="relative max-w-6xl mx-auto my-0">
@@ -60,7 +60,7 @@ const Header = () => {
           </div>
           <div className="hidden font-medium sm:flex items-center justify-between gap-4">
             <button className="py-1 px-3 hover:bg-cyan-600/10 rounded-md">
-              Products
+              Coming Soon
             </button>
             <button className="py-1 px-3 hover:bg-cyan-600/10 rounded-md">
               Features
@@ -70,7 +70,7 @@ const Header = () => {
             </button>
           </div>
           <div className="">
-            <button className="ring-2 ring-cyan-600 shadow-md text-sm font-semibold py-1 px-3 rounded-lg flex justify-between items-center">
+            <button className="ring-2 ring-cyan-600 hover:bg-cyan-600/10 shadow-md text-sm font-semibold py-2 px-3 rounded-lg flex justify-between items-center">
               <span className="pr-2">Join Waitlist</span>
               <MdOutlineScheduleSend size={20} />
             </button>
