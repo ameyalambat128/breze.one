@@ -24,7 +24,7 @@ const Header = () => {
   return (
     <section
       className={`fixed top-0 left-0 w-full z-50 transition duration-300 ease-in-out ${
-        show ? "bg-black/95 text-white" : "bg-transparent"
+        show ? "bg-gray-900/95 text-white" : "bg-transparent"
       }`}
     >
       <div className="relative max-w-6xl mx-auto my-0">
