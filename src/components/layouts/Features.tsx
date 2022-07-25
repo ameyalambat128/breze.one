@@ -21,7 +21,7 @@ export const Features1 = () => {
           <div className=""></div>
           <div className="h-auto sm:h-[45rem] flex flex-col items-start justify-center">
             <div className="font-bold tracking-tighter text-5xl sm:text-6xl sm:text-black/85 py-10  ">
-              Access All Your Emails Accounts Using One App
+              Access All Your Email Accounts Using One App
             </div>
             <p className="text-gray-500 pr-20">
               You can sign in using multiple accounts and access all your emails
