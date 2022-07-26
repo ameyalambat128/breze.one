@@ -1,12 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 // import Image from "next/image";
-import React, { useState, useEffect } from "react";
-import { MdOutlineScheduleSend } from "react-icons/md";
+import React, { useState, useEffect, useRef } from "react";
+// import { useTheme } from "next-themes";
+import { MdOutlineScheduleSend, MdOutlineDarkMode } from "react-icons/md";
 
 const Header = () => {
   const [show, setShow] = useState(false);
-  // eslint-disable-next-line no-unused-vars
+
   const [isMobile, setIsMobile] = useState(false);
+  // const { theme, setTheme } = useTheme();
 
   const transitionNavbar = () => {
     if (window.scrollY > 100) {
@@ -16,10 +18,28 @@ const Header = () => {
     }
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const scrollToBottom = () => {
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: "smooth",
+    });
+  };
+
   useEffect(() => {
     window.addEventListener("scroll", transitionNavbar);
+    window.addEventListener("top", scrollToTop);
+    window.addEventListener("bottom", scrollToBottom);
+
     // DetectMobile() ? setIsMobile(true) : setIsMobile(false);
-    return () => window.removeEventListener("scroll", transitionNavbar);
+    return () => {
+      window.removeEventListener("scroll", transitionNavbar);
+      window.addEventListener("top", scrollToTop);
+      window.addEventListener("bottom", scrollToBottom);
+    };
   }, []);
   return (
     <section
@@ -29,7 +49,12 @@ const Header = () => {
     >
       <div className="relative max-w-6xl mx-auto my-0">
         <div className="h-16 p-4 sm:p-0 flex justify-between items-center">
-          <div className="">
+          <div
+            className=""
+            onClick={() => {
+              scrollToTop();
+            }}
+          >
             <h1 className="font-black text-2xl md:text-3xl w-[5.5rem]">
               {isMobile ? (
                 show ? (
@@ -59,18 +84,33 @@ const Header = () => {
             </h1>
           </div>
           <div className="hidden font-medium sm:flex items-center justify-between gap-4">
-            <button className="py-1 px-3 hover:bg-cyan-600/10 rounded-md">
+            <button
+              onClick={() => {
+                scrollToTop();
+              }}
+              className="py-1 px-3 hover:bg-cyan-600/10 rounded-md"
+            >
               Coming Soon
             </button>
-            <button className="py-1 px-3 hover:bg-cyan-600/10 rounded-md">
+            <a className="py-1 px-3 hover:bg-cyan-600/10 rounded-md">
               Features
-            </button>
+            </a>
             <button className="py-1 px-3 hover:bg-cyan-600/10 rounded-md">
               About
             </button>
           </div>
-          <div className="">
-            <button className="ring-2 ring-cyan-600 hover:bg-cyan-600/10 shadow-md text-sm font-semibold py-2 px-3 rounded-lg flex justify-between items-center">
+          <div className="flex items-center space-x-4">
+            {/* <button
+              onClick={() => {
+                setTheme(theme === "dark" ? "light" : "dark");
+              }}
+            >
+              <MdOutlineDarkMode size={25} />
+            </button> */}
+            <button
+              onClick={() => scrollToBottom()}
+              className="ring-2 ring-cyan-600 hover:bg-cyan-600/10 shadow-md text-sm font-semibold py-2 px-3 rounded-lg flex justify-between items-center"
+            >
               <span className="pr-2">Join Waitlist</span>
               <MdOutlineScheduleSend size={20} />
             </button>

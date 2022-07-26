@@ -5,7 +5,7 @@ import { MdOutlineScheduleSend } from "react-icons/md";
 
 const Dashboard = () => {
   return (
-    <section className="mt-16 w-full bg-white overflow-x-hidden">
+    <section className="mt-16 w-full overflow-x-hidden">
       <div className="relative max-w-6xl my-0 mx-auto py-10 px-10 lg:px-0 flex justify-center">
         <div className="grid grid-rows-2 sm:grid-rows-1 sm:grid-cols-2 gap-5">
           <div className="h-80 sm:h-[45rem] flex flex-col items-start justify-center ">

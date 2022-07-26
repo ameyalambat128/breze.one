@@ -4,7 +4,7 @@ import { MdLanguage, MdLocationPin } from "react-icons/md";
 
 const Footer = () => {
   return (
-    <section className="w-full bg-slate-200 border-t-slate-400 border-[1px]">
+    <section className="w-full bg-slate-200 dark:bg-black border-t-slate-400 border-[1px]">
       <div className="relative h-auto max-w-6xl mx-auto my-0 px-2 sm:px-0 py-5 flex justify-center">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-y-10 lg:gap-x-20">
           <div className="col-span-2 sm:col-span-1 grid grid-flow-row gap-y-5 sm:content-between">
