@@ -1,14 +1,14 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable @next/next/no-img-element */
 // import Image from "next/image";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 // import { useTheme } from "next-themes";
-import { MdOutlineScheduleSend, MdOutlineDarkMode } from "react-icons/md";
+import { MdOutlineScheduleSend } from "react-icons/md";
 
 const Header = () => {
   const [show, setShow] = useState(false);
 
   const [isMobile, setIsMobile] = useState(false);
-  // const { theme, setTheme } = useTheme();
 
   const transitionNavbar = () => {
     if (window.scrollY > 100) {
