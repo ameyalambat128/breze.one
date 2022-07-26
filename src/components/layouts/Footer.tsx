@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { MdLanguage, MdLocationPin } from "react-icons/md";
+import { AiOutlineLinkedin, AiOutlineGithub } from "react-icons/ai";
 
 const Footer = () => {
   return (
@@ -28,21 +29,39 @@ const Footer = () => {
                 <span className="px-2">United States</span>
               </div>
             </div>
-            <div className="">©2022 Breze</div>
+            <div className="">
+              <div className="flex justify-start py-5 space-x-2">
+                <a href="https://www.linkedin.com/company/breze/">
+                  <AiOutlineLinkedin
+                    size={28}
+                    onClick={() => {}}
+                    className="hover:text-cyan-600"
+                  />
+                </a>
+                <a href="https://github.com/ameyalambat128/breze.one">
+                  <AiOutlineGithub
+                    size={28}
+                    onClick={() => {}}
+                    className="hover:text-cyan-600"
+                  />
+                </a>
+              </div>
+              ©2022 Breze
+            </div>
           </div>
 
           <div className="flex justify-start">
             <ul>
               <li className="font-semibold py-2">Coming Soon</li>
-              <li>Mail</li>
+              <li className="cursor-pointer hover:text-cyan-600">Mail</li>
             </ul>
           </div>
 
           <div className="flex justify-start">
             <ul>
               <li className="font-semibold py-2">Resources</li>
-              <li>About</li>
-              <li>Support</li>
+              <li className="cursor-pointer hover:text-cyan-600">About</li>
+              <li className="cursor-pointer hover:text-cyan-600">Support</li>
             </ul>
           </div>
 
