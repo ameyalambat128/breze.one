@@ -6,6 +6,7 @@ import * as uuid from "uuid";
 type Data = {
   id: string;
   email: string;
+  createdAt: number;
 };
 
 export default function handler(
