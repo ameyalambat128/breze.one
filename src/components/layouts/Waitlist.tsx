@@ -1,8 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
+import Axios from "axios";
+import React, { useState } from "react";
 import { MdOutlineScheduleSend } from "react-icons/md";
 
+const addUser = async (email: string) => {
+  await Axios.put("/api/addUser", { email: email });
+};
+
 const Waitlist = () => {
+  const [email, setEmail] = useState("");
   return (
     <section className="w-full">
       <div className="relative z-10 max-w-6xl my-0 mx-auto pt-10 md:pt-0 pb-20 flex justify-center">
@@ -18,9 +24,17 @@ const Waitlist = () => {
                   type="text"
                   placeholder="Enter Email"
                   className="text-sm w-72 py-2 px-3 rounded-lg ring-2 ring-cyan-600"
+                  onChange={(e) => setEmail(e.target.value)}
                 />
                 <div className="">
-                  <button className="ring-2 ring-cyan-600 hover:bg-cyan-600/10 shadow-md text-sm font-semibold py-2 px-3 rounded-lg flex justify-between items-center">
+                  <button
+                    onClick={() => {
+                      console.log("User Added: ", email);
+
+                      addUser(email);
+                    }}
+                    className="ring-2 ring-cyan-600 hover:bg-cyan-600/10 shadow-md text-sm font-semibold py-2 px-3 rounded-lg flex justify-between items-center"
+                  >
                     <span className="pr-2">Join Waitlist</span>
                     <MdOutlineScheduleSend size={20} />
                   </button>
