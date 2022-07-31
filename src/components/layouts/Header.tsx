@@ -34,7 +34,6 @@ const Header = () => {
     window.addEventListener("top", scrollToTop);
     window.addEventListener("bottom", scrollToBottom);
 
-    // DetectMobile() ? setIsMobile(true) : setIsMobile(false);
     return () => {
       window.removeEventListener("scroll", transitionNavbar);
       window.addEventListener("top", scrollToTop);
