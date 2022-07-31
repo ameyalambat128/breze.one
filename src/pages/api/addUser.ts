@@ -1,12 +1,9 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
 import db from "../../lib/dynamodb";
-import * as uuid from "uuid";
 
 type Data = {
-  id: string;
-  email: string;
-  createdAt: number;
+  result: string;
 };
 
 export default function handler(
@@ -15,16 +12,21 @@ export default function handler(
 ) {
   if (req.method === "PUT") {
     const user = {
-      id: uuid.v4(),
       email: req.body?.email,
       createdAt: Date.now(),
     };
-
-    db.put({
-      TableName: "breze-waitlist",
-      Item: user,
-    }).promise();
-
-    res.status(201).json(user);
+    db.get({ TableName: "breze-waitlist", Key: { email: req.body?.email } })
+      .promise()
+      .then((data) => {
+        if (data.Item) {
+          res.status(409).json({ result: "Already exists" });
+        } else {
+          db.put({
+            TableName: "breze-waitlist",
+            Item: user,
+          }).promise();
+          res.status(200).json({ result: "Success" });
+        }
+      });
   }
 }

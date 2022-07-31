@@ -57,12 +57,7 @@ export const Features2 = () => {
               Filtering through flagged emails, unread emails and sent emails
               with ease.
             </p>
-            <div className="py-10">
-              {/* <button className="ring-2 ring-gray-900 hover:bg-cyan-600/10 shadow-md text-sm font-semibold py-2 px-3 rounded-lg flex justify-between items-center">
-                <span className="pr-2">Join Waitlist</span>
-                <MdOutlineScheduleSend size={20} />
-              </button> */}
-            </div>
+            <div className="py-10"></div>
           </div>
           <div className="bg-transparent flex items-center">
             <img
@@ -73,7 +68,7 @@ export const Features2 = () => {
             <img
               src="/assets/breze-sort.png"
               alt="sort"
-              className="hidden sm:block rounded-md shadow-2xl -translate-x-56 -translate-y-20 blur-sm"
+              className="hidden sm:block rounded-md shadow-2xl -translate-x-64 -translate-y-20 blur-sm"
             />
           </div>
         </div>
