@@ -16,7 +16,7 @@ const Waitlist = () => {
   const [validEmail, setValidEmail] = useState(true);
 
   const { width } = useWindowDimensions();
-  const isMobile = width < Breakpoints.sm;
+  const isMobile = width < Breakpoints.md;
 
   const addUser = async (input: string) => {
     if (input.length === 0) {
@@ -102,11 +102,10 @@ const Waitlist = () => {
                 </div>
               </div>
             </div>
-            {isMobile && (
-              <div className="w-40">
-                <img src="/assets/breze-icon-test-black.png" alt="icon" />
-              </div>
-            )}
+
+            <div className="hidden sm:block w-40">
+              <img src="/assets/breze-icon-test-black.png" alt="icon" />
+            </div>
           </div>
         </div>
       </div>
