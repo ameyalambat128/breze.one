@@ -16,7 +16,7 @@ const Waitlist = () => {
   const [validEmail, setValidEmail] = useState(true);
 
   const { width } = useWindowDimensions();
-  const isMobile = width < Breakpoints.sm;
+  const isMobile = width < Breakpoints.md;
 
   const addUser = async (input: string) => {
     if (input.length === 0) {
@@ -91,7 +91,7 @@ const Waitlist = () => {
                 <div className="">
                   <button
                     onClick={() => {
-                      userExists && console.log("User Added: ", email);
+                      !userExists && console.log("Email Entered: ", email);
                       addUser(email);
                     }}
                     className={`ring-2 ring-cyan-600 hover:bg-cyan-600/10 shadow-md text-sm font-semibold py-2 px-3 rounded-lg flex justify-between items-center`}
@@ -102,11 +102,10 @@ const Waitlist = () => {
                 </div>
               </div>
             </div>
-            {isMobile && (
-              <div className="w-40">
-                <img src="/assets/breze-icon-test-black.png" alt="icon" />
-              </div>
-            )}
+
+            <div className="hidden sm:block w-40">
+              <img src="/assets/breze-icon-test-black.png" alt="icon" />
+            </div>
           </div>
         </div>
       </div>
