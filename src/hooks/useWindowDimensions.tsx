@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback } from "react";
-
 type WindowDimensions = { width: number; height: number };
 
 export enum Breakpoints {
