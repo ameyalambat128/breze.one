@@ -91,7 +91,7 @@ const Waitlist = () => {
                 <div className="">
                   <button
                     onClick={() => {
-                      userExists && console.log("User Added: ", email);
+                      !userExists && console.log("Email Entered: ", email);
                       addUser(email);
                     }}
                     className={`ring-2 ring-cyan-600 hover:bg-cyan-600/10 shadow-md text-sm font-semibold py-2 px-3 rounded-lg flex justify-between items-center`}

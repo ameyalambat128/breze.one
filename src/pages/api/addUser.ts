@@ -6,7 +6,7 @@ type Data = {
   result: string;
 };
 
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
@@ -15,18 +15,18 @@ export default function handler(
       email: req.body?.email,
       createdAt: Date.now(),
     };
-    db.get({ TableName: "breze-waitlist", Key: { email: req.body?.email } })
-      .promise()
-      .then((data) => {
-        if (data.Item) {
-          res.status(409).json({ result: "Already exists" });
-        } else {
-          db.put({
-            TableName: "breze-waitlist",
-            Item: user,
-          }).promise();
-          res.status(200).json({ result: "Success" });
-        }
-      });
+    const result = await db
+      .get({ TableName: "breze-waitlist", Key: { email: req.body?.email } })
+      .promise();
+    if (result.Item) {
+      res.status(409).json({ result: "User already exists" });
+    } else {
+      // console.log("Adding user", user);
+      db.put({
+        TableName: "breze-waitlist",
+        Item: user,
+      }).promise();
+      res.status(200).json({ result: "User successfully added" });
+    }
   }
 }
