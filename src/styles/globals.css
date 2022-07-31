@@ -4,6 +4,9 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  overflow-y: overlay;
+}
 * {
   margin: 0;
 }
