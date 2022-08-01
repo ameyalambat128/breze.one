@@ -22,6 +22,10 @@ const Header = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const scrollToFeatures = () => {
+    window.scrollTo({ top: 800, behavior: "smooth" });
+  };
+
   const scrollToBottom = () => {
     window.scrollTo({
       top: document.documentElement.scrollHeight,
@@ -32,12 +36,14 @@ const Header = () => {
   useEffect(() => {
     window.addEventListener("scroll", transitionNavbar);
     window.addEventListener("top", scrollToTop);
+    window.addEventListener("top", scrollToFeatures);
     window.addEventListener("bottom", scrollToBottom);
 
     return () => {
       window.removeEventListener("scroll", transitionNavbar);
-      window.addEventListener("top", scrollToTop);
-      window.addEventListener("bottom", scrollToBottom);
+      window.removeEventListener("top", scrollToTop);
+      window.removeEventListener("top", scrollToFeatures);
+      window.removeEventListener("bottom", scrollToBottom);
     };
   }, []);
   return (
@@ -91,9 +97,12 @@ const Header = () => {
             >
               Coming Soon
             </button>
-            <a className="py-1 px-3 hover:bg-cyan-600/10 rounded-md">
+            <button
+              onClick={() => scrollToFeatures()}
+              className="py-1 px-3 hover:bg-cyan-600/10 rounded-md"
+            >
               Features
-            </a>
+            </button>
             <button className="py-1 px-3 hover:bg-cyan-600/10 rounded-md">
               About
             </button>
