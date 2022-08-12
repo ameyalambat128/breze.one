@@ -1,8 +1,10 @@
 # [Breze](https://breze.one)
 
+Source Code for Breze.one, official landing website for Breze
+
 Browse Through Your Emails in a Breze!
 
-Source Code for Breze.one, landing page for Breze
+
 
 ### Join the waitlist on https://breze.one
 
