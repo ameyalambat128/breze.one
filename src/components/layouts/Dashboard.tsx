@@ -4,9 +4,9 @@
 import { MdOutlineScheduleSend } from "react-icons/md";
 
 const Dashboard = () => {
-  const scrollToBottom = () => {
+  const scrollToWaitlist = () => {
     window.scrollTo({
-      top: document.documentElement.scrollHeight,
+      top: 2000,
       behavior: "smooth",
     });
   };
@@ -26,7 +26,7 @@ const Dashboard = () => {
             <div className="py-10">
               <button
                 onClick={() => {
-                  scrollToBottom();
+                  scrollToWaitlist();
                 }}
                 className="ring-2 ring-gray-900 hover:bg-cyan-600/10 shadow-md text-sm font-semibold py-2 px-3 rounded-lg flex justify-between items-center"
               >
@@ -35,13 +35,7 @@ const Dashboard = () => {
               </button>
             </div>
           </div>
-          <div className="">
-            {/* {isMobile && (
-              <div className="relative w-80 bg-transparent shadow-3xl rounded-md ">
-                <img src={"/assets/breze-hd.png"} alt="logo" />
-              </div>
-            )} */}
-          </div>
+          <div className=""></div>
         </div>
         <div className="absolute top-[28rem] sm:top-14 sm:left-[35rem] lg:left-[40rem] md:w-[1080px] overflow-x-hidden bg-transparent shadow-3xl rounded-md ">
           <img

@@ -26,9 +26,9 @@ const Header = () => {
     window.scrollTo({ top: 800, behavior: "smooth" });
   };
 
-  const scrollToBottom = () => {
+  const scrollToWaitlist = () => {
     window.scrollTo({
-      top: document.documentElement.scrollHeight,
+      top: 2000,
       behavior: "smooth",
     });
   };
@@ -37,13 +37,13 @@ const Header = () => {
     window.addEventListener("scroll", transitionNavbar);
     window.addEventListener("top", scrollToTop);
     window.addEventListener("top", scrollToFeatures);
-    window.addEventListener("bottom", scrollToBottom);
+    window.addEventListener("bottom", scrollToWaitlist);
 
     return () => {
       window.removeEventListener("scroll", transitionNavbar);
       window.removeEventListener("top", scrollToTop);
       window.removeEventListener("top", scrollToFeatures);
-      window.removeEventListener("bottom", scrollToBottom);
+      window.removeEventListener("bottom", scrollToWaitlist);
     };
   }, []);
   return (
@@ -116,7 +116,7 @@ const Header = () => {
               <MdOutlineDarkMode size={25} />
             </button> */}
             <button
-              onClick={() => scrollToBottom()}
+              onClick={() => scrollToWaitlist()}
               className="ring-2 ring-cyan-600 hover:bg-cyan-600/10 shadow-md text-sm font-semibold py-2 px-3 rounded-lg flex justify-between items-center"
             >
               <span className="pr-2">Join Waitlist</span>
