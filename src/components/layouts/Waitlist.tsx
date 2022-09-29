@@ -51,12 +51,12 @@ const Waitlist = () => {
 
   return (
     <section className="w-full">
-      <div className="relative z-10 max-w-6xl my-0 mx-auto pt-10 md:pt-0 pb-20 flex justify-center">
-        <div className="w-80 sm:w-3/4 sm:h-96 flex items-center justify-center rounded-lg shadow-4xl">
+      <div className="relative z-10 my-0 mx-auto flex max-w-6xl justify-center pt-10 pb-20 md:pt-0">
+        <div className="flex w-80 items-center justify-center rounded-lg shadow-4xl sm:h-96 sm:w-3/4">
           {/* <div className="flex flex-col sm:flex-row items-center justify-between space-y-8 sm:space-y-0"> */}
           <div className="grid grid-cols-3 gap-10">
-            <div className="col-span-2 p-5 md:p-0 flex flex-col items-start space-y-8">
-              <div className="text-4xl sm:text-5xl font-bold tracking-tighter">
+            <div className="col-span-2 flex flex-col items-start space-y-8 p-5 md:p-0">
+              <div className="text-4xl font-bold tracking-tighter sm:text-5xl">
                 Try out Breze!
               </div>
               <div className="space-y-4">
@@ -65,7 +65,7 @@ const Waitlist = () => {
                     type="text"
                     placeholder="Enter Email"
                     className={classNames(
-                      "text-sm w-72 py-2 px-3 rounded-lg border-2",
+                      "w-72 rounded-lg border-2 py-2 px-3 text-sm",
                       isEmpty ? "border-red-600" : "border-cyan-600"
                     )}
                     onChange={(e) => setEmail(e.target.value)}
@@ -73,7 +73,7 @@ const Waitlist = () => {
                     aria-invalid={validEmail ? "false" : "true"}
                   />
                   {userExists && (
-                    <p className="block transition ease-in-out pt-[1px] text-xs">
+                    <p className="block pt-[1px] text-xs transition ease-in-out">
                       User Already Exists!
                     </p>
                   )}
@@ -81,7 +81,7 @@ const Waitlist = () => {
                     className={
                       validEmail
                         ? "hidden"
-                        : "block transition ease-in-out pt-[1px] text-xs text-red-500"
+                        : "block pt-[1px] text-xs text-red-500 transition ease-in-out"
                     }
                   >
                     Please enter a valid email address.
@@ -94,7 +94,7 @@ const Waitlist = () => {
                       !userExists && console.log("Email Entered: ", email);
                       addUser(email);
                     }}
-                    className={`ring-2 ring-cyan-600 hover:bg-cyan-600/10 shadow-md text-sm font-semibold py-2 px-3 rounded-lg flex justify-between items-center`}
+                    className={`flex items-center justify-between rounded-lg py-2 px-3 text-sm font-semibold shadow-md ring-2 ring-cyan-600 hover:bg-cyan-600/10`}
                   >
                     <span className="pr-2">Join Waitlist</span>
                     <MdOutlineScheduleSend size={20} />
@@ -103,7 +103,7 @@ const Waitlist = () => {
               </div>
             </div>
 
-            <div className="hidden sm:block w-40">
+            <div className="hidden w-40 sm:block">
               <img src="/assets/breze-icon-test-black.png" alt="icon" />
             </div>
           </div>

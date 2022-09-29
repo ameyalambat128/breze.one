@@ -48,19 +48,19 @@ const Header = () => {
   }, []);
   return (
     <section
-      className={`fixed top-0 left-0 w-full z-50 transition duration-300 ease-in-out ${
+      className={`fixed top-0 left-0 z-50 w-full transition duration-300 ease-in-out ${
         show ? "bg-gray-900/95 text-white" : "bg-transparent"
       }`}
     >
-      <div className="relative max-w-6xl mx-auto my-0">
-        <div className="h-16 p-4 sm:p-0 flex justify-between items-center">
+      <div className="relative mx-auto my-0 max-w-6xl">
+        <div className="flex h-16 items-center justify-between p-4 sm:p-0">
           <div
             className=""
             onClick={() => {
               scrollToTop();
             }}
           >
-            <h1 className="font-black text-2xl md:text-3xl w-[5.5rem]">
+            <h1 className="w-[5.5rem] text-2xl font-black md:text-3xl">
               {isMobile ? (
                 show ? (
                   <img
@@ -88,22 +88,22 @@ const Header = () => {
               )}
             </h1>
           </div>
-          <div className="hidden font-medium sm:flex items-center justify-between gap-4">
+          <div className="hidden items-center justify-between gap-4 font-medium sm:flex">
             <button
               onClick={() => {
                 scrollToTop();
               }}
-              className="py-1 px-3 hover:bg-cyan-600/10 rounded-md"
+              className="rounded-md py-1 px-3 hover:bg-cyan-600/10"
             >
               Coming Soon
             </button>
             <button
               onClick={() => scrollToFeatures()}
-              className="py-1 px-3 hover:bg-cyan-600/10 rounded-md"
+              className="rounded-md py-1 px-3 hover:bg-cyan-600/10"
             >
               Features
             </button>
-            <button className="py-1 px-3 hover:bg-cyan-600/10 rounded-md">
+            <button className="rounded-md py-1 px-3 hover:bg-cyan-600/10">
               About
             </button>
           </div>
@@ -117,7 +117,7 @@ const Header = () => {
             </button> */}
             <button
               onClick={() => scrollToWaitlist()}
-              className="ring-2 ring-cyan-600 hover:bg-cyan-600/10 shadow-md text-sm font-semibold py-2 px-3 rounded-lg flex justify-between items-center"
+              className="flex items-center justify-between rounded-lg py-2 px-3 text-sm font-semibold shadow-md ring-2 ring-cyan-600 hover:bg-cyan-600/10"
             >
               <span className="pr-2">Join Waitlist</span>
               <MdOutlineScheduleSend size={20} />
