@@ -5,10 +5,10 @@ import { AiOutlineLinkedin, AiOutlineGithub } from "react-icons/ai";
 
 const Footer = () => {
   return (
-    <section className="w-full bg-slate-200 dark:bg-black border-t-slate-400 border-[1px]">
-      <div className="relative h-auto max-w-6xl mx-auto my-0 px-2 sm:px-0 py-5 flex justify-center">
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-y-10 lg:gap-x-20">
-          <div className="col-span-2 sm:col-span-1 grid grid-flow-row gap-y-5 sm:content-between">
+    <section className="w-full border-[1px] border-t-slate-400 bg-slate-200 dark:bg-black">
+      <div className="relative mx-auto my-0 flex h-auto max-w-6xl justify-center px-2 py-5 sm:px-0">
+        <div className="grid grid-cols-2 gap-y-10 sm:grid-cols-4 lg:gap-x-20">
+          <div className="col-span-2 grid grid-flow-row gap-y-5 sm:col-span-1 sm:content-between">
             <div className="">
               <div className="w-20">
                 <Image
@@ -30,7 +30,7 @@ const Footer = () => {
               </div>
             </div>
             <div className="">
-              <div className="flex justify-start py-5 space-x-2">
+              <div className="flex justify-start space-x-2 py-5">
                 <a href="https://www.linkedin.com/company/breze/">
                   <AiOutlineLinkedin
                     size={28}
@@ -52,36 +52,36 @@ const Footer = () => {
 
           <div className="flex justify-start">
             <ul>
-              <li className="font-semibold py-2">Coming Soon</li>
+              <li className="py-2 font-semibold">Coming Soon</li>
               <li className="cursor-pointer hover:text-cyan-600">Mail</li>
             </ul>
           </div>
 
           <div className="flex justify-start">
             <ul>
-              <li className="font-semibold py-2">Resources</li>
+              <li className="py-2 font-semibold">Resources</li>
               <li className="cursor-pointer hover:text-cyan-600">About</li>
               <li className="cursor-pointer hover:text-cyan-600">Support</li>
             </ul>
           </div>
 
-          <div className="col-span-2 sm:col-span-1 flex justify-start">
+          <div className="col-span-2 flex justify-start sm:col-span-1">
             <ul>
-              <p className="font-semibold py-4">Contact</p>
-              <div className="flex flex-col space-y-2 justify-start">
+              <p className="py-4 font-semibold">Contact</p>
+              <div className="flex flex-col justify-start space-y-2">
                 <input
                   type="text"
-                  className="text-sm w-[calc(100vw-4rem)] sm:w-64 py-2 px-3 rounded-lg"
+                  className="w-[calc(100vw-4rem)] rounded-lg py-2 px-3 text-sm sm:w-64"
                   placeholder="Enter Name"
                 />
                 <input
                   type="text"
-                  className="text-sm w-[calc(100vw-4rem)] sm:w-64 py-2 px-3 rounded-lg"
+                  className="w-[calc(100vw-4rem)] rounded-lg py-2 px-3 text-sm sm:w-64"
                   placeholder="Enter Email"
                 />
                 <input
                   type="text"
-                  className="text-sm w-[calc(100vw-4rem)] sm:w-64 h-28 py-2 px-3 rounded-lg"
+                  className="h-28 w-[calc(100vw-4rem)] rounded-lg py-2 px-3 text-sm sm:w-64"
                   placeholder="Enter Message"
                 />
               </div>

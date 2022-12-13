@@ -6,29 +6,29 @@ import React from "react";
 export const Features1 = () => {
   return (
     <section className="w-full">
-      <div className="relative max-w-6xl my-0 mx-auto py-10 px-10 lg:px-0 flex justify-center">
-        <div className="grid sm:grid-cols-2 gap-5">
-          <div className="absolute top-[35rem] sm:top-20 right-[2.25rem] sm:right-[35rem] lg:right-[50rem] w-80 md:w-[1024px] overflow-x-hidden bg-transparent shadow-4xl rounded-md">
+      <div className="relative my-0 mx-auto flex max-w-6xl justify-center py-10 px-10 lg:px-0">
+        <div className="grid gap-5 sm:grid-cols-2">
+          <div className="absolute top-[35rem] right-[2.25rem] w-80 overflow-x-hidden rounded-md bg-transparent shadow-4xl sm:top-20 sm:right-[35rem] md:w-[1024px] lg:right-[50rem]">
             <Image
               src={"/assets/breze3-hd.png"}
               alt="logo"
               layout="responsive"
               width={1920}
               height={1080}
-              className="object-contain h-auto"
+              className="h-auto object-contain"
             />
           </div>
           <div className=""></div>
-          <div className="h-auto sm:h-[45rem] flex flex-col items-start justify-center">
-            <div className="font-bold tracking-tighter text-5xl sm:text-6xl sm:text-black/85 py-10  ">
+          <div className="flex h-auto flex-col items-start justify-center sm:h-[45rem]">
+            <div className="sm:text-black/85 py-10 text-5xl font-bold tracking-tighter sm:text-6xl  ">
               Access All Your Email Accounts Using One App
             </div>
-            <p className="text-gray-500 pr-20">
+            <p className="pr-20 text-gray-500">
               You can sign in using multiple accounts and access all your emails
               in one place.
             </p>
 
-            <p className="text-gray-500 text-xs pt-10">
+            <p className="pt-10 text-xs text-gray-500">
               *Currently supports Gmail only.
             </p>
             <div className="h-64 py-10">
@@ -47,28 +47,28 @@ export const Features1 = () => {
 export const Features2 = () => {
   return (
     <section className="w-full overflow-x-hidden">
-      <div className="relative max-w-6xl my-0 mx-auto py-10 px-10 lg:px-0 flex justify-center">
-        <div className="grid sm:grid-cols-2 gap-5">
-          <div className="h-auto sm:h-[45rem] flex flex-col items-start justify-center ">
-            <div className="font-bold tracking-tighter text-5xl sm:text-6xl sm:text-black/85 py-10">
+      <div className="relative my-0 mx-auto flex max-w-6xl justify-center py-10 px-10 lg:px-0">
+        <div className="grid gap-5 sm:grid-cols-2">
+          <div className="flex h-auto flex-col items-start justify-center sm:h-[45rem] ">
+            <div className="sm:text-black/85 py-10 text-5xl font-bold tracking-tighter sm:text-6xl">
               Quick Sorting and Filtering
             </div>
-            <p className="text-gray-500 pr-20">
+            <p className="pr-20 text-gray-500">
               Filtering through flagged emails, unread emails and sent emails
               with ease.
             </p>
             <div className="py-10"></div>
           </div>
-          <div className="bg-transparent flex items-center">
+          <div className="flex items-center bg-transparent">
             <img
               src="/assets/breze-sort-cut.png"
               alt="sort"
-              className="rounded-md shadow-4xl z-10"
+              className="z-10 rounded-md shadow-4xl"
             />
             <img
               src="/assets/breze-sort.png"
               alt="sort"
-              className="hidden sm:block rounded-md shadow-2xl -translate-x-64 -translate-y-20 blur-sm"
+              className="hidden -translate-x-64 -translate-y-20 rounded-md shadow-2xl blur-sm sm:block"
             />
           </div>
         </div>
