@@ -10,6 +10,10 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
+  if (req.method === "GET") {
+    res.send({ result: "Add User" });
+  }
+
   if (req.method === "PUT") {
     const user = {
       email: req.body?.email,

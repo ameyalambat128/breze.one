@@ -3,7 +3,6 @@ import { classNames } from "@/utils/Classnames";
 import Axios from "axios";
 import React, { useEffect, useState } from "react";
 import { MdOutlineScheduleSend } from "react-icons/md";
-import useWindowDimensions, { Breakpoints } from "@/hooks/useWindowDimensions";
 
 const emailRegex =
   // eslint-disable-next-line no-useless-escape
@@ -14,9 +13,6 @@ const Waitlist = () => {
   const [isEmpty, setIsEmpty] = useState(false);
   const [userExists, setUserExists] = useState(false);
   const [validEmail, setValidEmail] = useState(true);
-
-  const { width } = useWindowDimensions();
-  const isMobile = width < Breakpoints.md;
 
   const addUser = async (input: string) => {
     if (input.length === 0) {
@@ -29,7 +25,6 @@ const Waitlist = () => {
         setUserExists(true);
         console.error("Conflict: User already exists");
       }
-      // console.log(status.status);
     }
   };
 
