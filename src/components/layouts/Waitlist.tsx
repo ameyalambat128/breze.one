@@ -88,6 +88,7 @@ const Waitlist = () => {
                     onClick={() => {
                       !userExists && console.log("Email Entered: ", email);
                       addUser(email);
+                      addUser(email); // Adding User twice since one call doesn't seem to work
                     }}
                     className={`flex items-center justify-between rounded-lg py-2 px-3 text-sm font-semibold shadow-md ring-2 ring-cyan-600 hover:bg-cyan-600/10`}
                   >
