@@ -24,12 +24,14 @@ export default function Home() {
             />
           </Link>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              variant="default"
-              className="bg-blue-600 text-white px-4 py-2 text-sm font-semibold rounded-lg shadow-md"
-            >
-              Get Early Access →
-            </Button>
+            <Link href="https://tally.so/r/3EBRd4">
+              <Button
+                variant="default"
+                className="bg-blue-600 text-white px-4 py-2 text-sm font-semibold rounded-lg shadow-md"
+              >
+                Get Early Access →
+              </Button>
+            </Link>
           </div>
         </header>
 
@@ -53,12 +55,14 @@ export default function Home() {
               responses. Never miss a review again.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                variant="default"
-                className="bg-blue-600 text-white px-4 py-2 text-sm font-semibold rounded-lg shadow-md"
-              >
-                Get Early Access →
-              </Button>
+              <Link href="https://tally.so/r/3EBRd4">
+                <Button
+                  variant="default"
+                  className="bg-blue-600 text-white px-4 py-2 text-sm font-semibold rounded-lg shadow-md"
+                >
+                  Get Early Access →
+                </Button>
+              </Link>
             </div>
           </div>
         </main>
